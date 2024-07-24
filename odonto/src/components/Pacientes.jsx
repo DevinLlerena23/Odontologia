@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Pacientes = () => {
   const [pacientes, setPacientes] = useState([]);
@@ -11,9 +12,8 @@ const Pacientes = () => {
 
   const fetchPacientes = async () => {
     try {
-      const response = await fetch('http://localhost:8080/pacientes/lista');
-      const data = await response.json();
-      setPacientes(data);
+      const response = await axios.get('http://localhost:8081/pacientes/list');
+      setPacientes(response.data);
     } catch (error) {
       console.error('Error fetching pacientes', error);
     }
@@ -26,18 +26,13 @@ const Pacientes = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const options = {
-        method: form.id ? 'PUT' : 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form),
-      };
-      const url = form.id
-        ? `http://localhost:8080/pacientes/update/${form.id}`
-        : 'http://localhost:8080/pacientes/save';
-      
-      await fetch(url, options);
+      if (form.id) {
+        // Update existing paciente;
+        await axios.put(`http://localhost:8081/pacientes/update/${form.id}`, form);
+      } else {
+        // Add new paciente
+        await axios.post('http://localhost:8081/pacientes/save', form);
+      }
       fetchPacientes();
       setIsModalOpen(false);
     } catch (error) {
@@ -52,7 +47,7 @@ const Pacientes = () => {
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:8080/pacientes/del/${id}`, { method: 'DELETE' });
+      await axios.delete(`http://localhost:8081/pacientes/delete/${id}`);
       fetchPacientes();
     } catch (error) {
       console.error('Error deleting paciente', error);
