@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from "./Navbar";
 
 const Pacientes = () => {
   const [pacientes, setPacientes] = useState([]);
@@ -56,6 +57,7 @@ const Pacientes = () => {
 
   return (
     <div className="container mt-5">
+      <Navbar />
       <h1>Pacientes</h1>
       <button className="btn btn-primary mb-3" onClick={() => setIsModalOpen(true)}>Agregar Paciente</button>
 

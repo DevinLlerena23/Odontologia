@@ -5,12 +5,11 @@ import "primereact/resources/primereact.min.css";
 import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
 import Pacientes from './components/Pacientes';
-import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
+    <BrowserRouter>      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
