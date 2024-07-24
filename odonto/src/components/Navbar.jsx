@@ -1,37 +1,44 @@
-
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 import { Badge } from 'primereact/badge';
 import { Avatar } from 'primereact/avatar';  
-
+import { Link } from 'react-router-dom';
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (
-        <a className="flex align-items-center p-menuitem-link">
+        <Link to={item.path} className="flex align-items-center p-menuitem-link">
             <span className={item.icon} />
             <span className="mx-2">{item.label}</span>
             {item.badge && <Badge className="ml-auto" value={item.badge} />}
             {item.shortcut && <span className="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">{item.shortcut}</span>}
-        </a>
+        </Link>
     );
     const items = [
         {
             label: 'Pacientes',
-            icon: 'pi pi-user'
+            icon: 'pi pi-user',
+            path: '/home/pacientes',
+            template: itemRenderer
         },
         {
             label: 'Fichas Tecnicas',
-            icon: 'pi pi-address-book'
+            icon: 'pi pi-address-book',
+            path: '/home/fichas',
+            template: itemRenderer
         },
-       
         {
             label: 'Odontogramas',
             icon: 'pi pi-calendar',
+            path: '/home/odontogramas',
             template: itemRenderer
         }
     ];
 
-    const start = <img alt="logo" src="https://cdn.discordapp.com/attachments/1054461321808187434/1265495940022669312/diente.png?ex=66a1b86f&is=66a066ef&hm=96b83d8912cfbcb0e8ffaf8f9fa302da1236f251b7a886117029159b396be88e&" height="40" className="mr-2"></img>;
+    const start = (
+        <Link to="/home">
+            <img alt="logo" src="https://cdn.discordapp.com/attachments/1054461321808187434/1265495940022669312/diente.png?ex=66a1b86f&is=66a066ef&hm=96b83d8912cfbcb0e8ffaf8f9fa302da1236f251b7a886117029159b396be88e&" height="40" className="mr-2" />
+        </Link>
+    );
     const end = (
         <div className="flex align-items-center gap-2">
             <InputText placeholder="Search" type="text" className="w-8rem sm:w-auto" />
