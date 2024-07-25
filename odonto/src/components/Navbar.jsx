@@ -1,5 +1,4 @@
 import { Menubar } from 'primereact/menubar';
-import { InputText } from 'primereact/inputtext';
 import { Badge } from 'primereact/badge';
 import { Avatar } from 'primereact/avatar';  
 import { Link } from 'react-router-dom';
@@ -41,8 +40,7 @@ export default function TemplateDemo() {
     );
     const end = (
         <div className="flex align-items-center gap-2">
-            <InputText placeholder="Search" type="text" className="w-8rem sm:w-auto" />
-            <Avatar image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png" shape="circle" />
+            <Avatar icon="pi pi-user" size="large" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" />
         </div>
     );
 
@@ -796,5 +794,4 @@ img.flag {
         </div>
 
     )
-}
-        
+}      
