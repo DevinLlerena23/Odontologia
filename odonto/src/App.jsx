@@ -5,12 +5,16 @@ import "primereact/resources/primereact.min.css";
 import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
 import Pacientes from './components/Pacientes';
+import FichaTecnica from './components/FichaTecnica';
+import Login from "./components/Login";
+
 
 
 function App() {
   return (
     <BrowserRouter>      
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/home/pacientes" element={<Pacientes />} />

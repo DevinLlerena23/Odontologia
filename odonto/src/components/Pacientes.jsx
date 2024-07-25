@@ -56,6 +56,8 @@ const Pacientes = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className="container mt-5">
       <Navbar />
       <h1>Pacientes</h1>
@@ -120,6 +122,7 @@ const Pacientes = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
