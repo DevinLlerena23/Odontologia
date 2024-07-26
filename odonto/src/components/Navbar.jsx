@@ -40,7 +40,6 @@ export default function TemplateDemo() {
     );
     const end = (
         <div className="flex align-items-center gap-2">
-            <Avatar icon="pi pi-user" size="large" style={{ backgroundColor: '#2196F3', color: '#ffffff' }} shape="circle" />
         </div>
     );
 

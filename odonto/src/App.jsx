@@ -6,6 +6,7 @@ import "primeflex/primeflex.css";
 import "primeicons/primeicons.css";
 import Pacientes from './components/Pacientes';
 import FichaTecnica from './components/FichaTecnica';
+import Odontograma from './components/Odontograma';
 import Login from "./components/Login";
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/home/pacientes" element={<Pacientes />} />
         <Route path="/home/fichas" element={<FichaTecnica />} />
+        <Route path="/home/odontogramas" element={<Odontograma/>} />
       </Routes>
     </BrowserRouter>
   );

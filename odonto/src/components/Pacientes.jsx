@@ -93,6 +93,7 @@ const Pacientes = () => {
             <div key={paciente.id} className="list-group-item d-flex justify-content-between align-items-center">
               <div>
                 <h5>{paciente.nombre} {paciente.apellido}</h5>
+                <p>Paciente ID: {paciente.id}</p>
                 <p>{paciente.fecha_nacimiento} | {paciente.genero} | {paciente.telefono} | {paciente.correo}</p>
               </div>
               <div>
