@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
+import { InputTextarea } from 'primereact/inputtextarea';
 import Navbar from './Navbar';
 import OdontogramaDetail from './OdontogramaDetail';
 
@@ -157,7 +158,7 @@ const Odontograma = () => {
         <div className="p-fluid">
           <div className="p-field">
             <label htmlFor="descripcion">Descripción</label>
-            <InputText id="descripcion" value={newDescripcion} onChange={(e) => setNewDescripcion(e.target.value)} />
+            <InputTextarea autoResize id="descripcion" value={newDescripcion} onChange={(e) => setNewDescripcion(e.target.value)} />
           </div>
           <Button label="Guardar" icon="pi pi-check" onClick={handleEditDescripcion} />
         </div>

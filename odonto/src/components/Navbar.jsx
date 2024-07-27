@@ -1,7 +1,7 @@
 import { Menubar } from 'primereact/menubar';
 import { Badge } from 'primereact/badge';
-import { Avatar } from 'primereact/avatar';  
 import { Link } from 'react-router-dom';
+import logo from '../assets/diente.png'
 
 export default function TemplateDemo() {
     const itemRenderer = (item) => (
@@ -35,7 +35,7 @@ export default function TemplateDemo() {
 
     const start = (
         <Link to="/home">
-            <img alt="logo" src="https://cdn.discordapp.com/attachments/1054461321808187434/1265495940022669312/diente.png?ex=66a1b86f&is=66a066ef&hm=96b83d8912cfbcb0e8ffaf8f9fa302da1236f251b7a886117029159b396be88e&" height="40" className="mr-2" />
+            <img alt="logo" src={logo} height="40" className="mr-2" />
         </Link>
     );
     const end = (
